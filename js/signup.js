@@ -1,8 +1,10 @@
 
 var $signupForm = document.getElementById('register');
+const spinUp = document.getElementById('spinner-signup');
 
 $signupForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    starLoading();
     const userForm = new FormData($signupForm);
     $signupForm.reset();
     fetch("https://xipxat.onrender.com/signup", {
@@ -12,6 +14,7 @@ $signupForm.addEventListener('submit', (event) => {
     })
         .then(res => {
             if (res.ok) {
+                stopLoading();
                 swal({
                     title: "Great!",
                     text: "new user added",
@@ -20,6 +23,7 @@ $signupForm.addEventListener('submit', (event) => {
                 })
                     .then(() => window.location.replace('./login.html'))
             } else {
+                stopLoading();
                 swal({
                     title: "User NOT added",
                     text: "Are you registered?",
@@ -37,3 +41,13 @@ $signupForm.addEventListener('submit', (event) => {
             console.log(error)
         });
 });
+
+function starLoading() {
+    console.log('starLoading');
+    spinUp.classList.remove('spin-hide');
+}
+
+function stopLoading() {
+    console.log('stopLoading');
+    spinUp.classList.add('spin-hide');
+}
