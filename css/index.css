@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #bdc3c7;
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+}
+
+#wellcome {
+  margin-top: 10%;
+  color: #2c3e50;
+  font-family: sans-serif;
+  background-color: rgba(255, 255, 255, .1);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: fit-content;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  padding: 20px;
+
+}
+
+#enter {
+  background-color: rgba(255, 255, 255, .1);
+  border: 2px solid rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  margin: 10px;
+}
